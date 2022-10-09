@@ -1,0 +1,183 @@
+ **SHELL** 
+
+Job 01
+
+Pour afficher le manuel de la commande ls voici ce qu'il faut taper dans son terminal :
+
+man ls
+
+Pour cacher mon fichier j'ai mis un point avant son nom (.test.jpg).
+
+En écrivant ls il ne s'affichait pas mais voici la bonne commande pour afficher tous les fichiers même ceux qui sont caché :
+
+ls -a
+
+Pour afficher seulement les fichiers cachés je dois taper :
+
+ls -d .\*
+
+Pour afficher les fichiers cachés et les informations sur les droits sous forme de
+
+liste il faut taper dans son shell :
+
+ls -la
+
+Comment ajouter des options à une commande?
+
+Il existe deux types d'options : les options courtes, notées avec un seul tiret puis une lettre (ex: -h) ou avec deux tirets puis un mot (ex: --help).
+
+Quelles sont les deux syntaxes principales d'écriture des options pour une
+
+commande?
+
+Job 02
+
+Pour lire mon fichier .bashrc en utilisant une commande j'ai tapé dans mon shell :
+
+less .bashrc
+
+Pour lire les 10 premières lignes de mon fichier ".bashrc" en utilisant une commande j'ai tapé dans mon shell :
+
+head .bashrc
+
+Pour lire les 10 dernières lignes de mon fichier ".bashrc" en utilisant une commande j'ai tapé dans mon shell :
+
+tail .bashrc
+
+Pour lire les 20 premières lignes de mon fichier ".bashrc" en utilisant une commande j'ai tapé dans mon shell :
+
+head -n 20 .bashrc
+
+Pour lire les 20 dernières lignes de mon fichier ".bashrc" en utilisant une commande j'ai tapé dans mon shell :
+
+tail -n 20 .bashrc
+
+Job 03
+
+Avant d'Installer le paquet "cmatrix" je me suis connecté en tant que root avec la commande "su" puis ensuite j'ai tapé dans mon shell la commande :
+
+apt-get -y install cmatrix
+
+Pour lancer le paquet que je viens d'installer j'ai tout simplement écris dans mon shell :
+
+cmatrix
+
+Pour mettre à jour mon gestionnaire de paquets j'ai utilisé cette commande dans mon shell :
+
+apt-get update
+
+Pour mettre à jour les différents logiciels j'ai utilisé cette commande dans mon shell :
+
+apt full-upgrade
+
+Pour avoir Google j'ai écris dans mon terminal de commande :
+
+wget google.com
+
+Pour redémarrer ma machine j'ai tapé cette commande dans mon shell :
+
+sudo reboot
+
+Pour éteindre ma machine j'ai tapé cette commande dans mon shell :
+
+sudo shutdown
+
+Job 04
+
+Créer un fichier users.txt qui contiendra User1 et User2 séparé par un retour à la ligne :
+
+nano users.txt
+
+- Créer un groupe appelé "Plateformeurs" :
+
+sudo groupadd Plateformeurs
+
+- Créer un utilisateur appelé "User1" :
+
+sudo useradd User1
+
+- Créer un utilisateur appelé "User2" :
+
+sudo useradd User2
+
+- Ajouter "User2" au groupe Plateformeurs :
+
+sudo usermod -a -G Plateformeurs User2
+
+- Copier votre "users.txt" dans un fichier "droits.txt" :
+
+cp users.txt droits.txt
+
+- Copier votre "users.txt" dans un fichier "groupes.txt" :
+
+cp Users.txt groupes.txt
+
+- Changer le propriétaire du fichier "droits.txt" pour mettre "User1" :
+
+sudo chown User1 droits.txt
+
+- Changer les droits du fichier "droits.txt" pour que "User2" ai accès seulement en lecture :
+
+sudo chmod g=r droits.txt
+
+- Changer les droits du fichier "groupes.txt" pour que les utilisateurs puissent
+
+accéder au fichier en lecture uniquement :
+
+sudo chmod o=r groupes.txt
+
+- Changer les droits du fichier pour que le groupe "Plateformeurs" puissent y
+
+accéder en lecture/écriture.
+
+chmod g=rw groupes.txt
+
+Job 05
+
+- Ajouter un alias qui permettra de lancer la commande "ls -la" en tapant "la" :
+
+alias la="ls -la"
+
+- Ajouter un alias qui permettra de lancer la commande "apt-get update" en tapant "update" :
+
+alias update="sudo apt-get update"
+
+- Ajouter un alias qui permettra de lancer la commande "apt-get upgrade" en
+
+tapant "upgrade" :
+
+alias upgrade="sudo apt-get upgrade"
+
+- Ajouter une variable d'environnement qui se nommera "USER" et qui sera égale à votre nom d'utilisateur :
+
+export USER=azerty
+
+- Mettre à jour les modifications de votre bashrc dans votre shell actuel :
+
+exec bash
+
+- Afficher les variables d'environnement :
+
+printenv
+
+- Ajouter à votre Path le chemin "/home/'votre utilisateur'/Bureau" :
+
+export PATH=$PATH:/home/azerty/Bureau
+
+Job 06 qui donne accès au Job 07
+
+- Créer un fichier "une\_commande.txt" avec le texte suivant "Je suis votre fichier texte"
+
+nano une\_commande.txt
+
+- Compter le nombre de lignes présentes dans votre fichier de source apt et les enregistrer dans un fichier nommé "nb\_lignes.txt" :
+
+wc -l /etc/apt/sources.list \> nb\_lignes.txt
+
+- Afficher le contenu du fichier source apt et l'enregistrer dans un autre fichier appelé "save\_sources" :
+
+cat /etc/apt/sources.list \> save\_sources
+
+- Faites une recherche des fichiers commençant par "." tout en cherchant le mot alias qui sera utilisé depuis un fichier :
+
+find -type f -iname ".\*" | grep -w alias \*
